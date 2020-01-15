@@ -1,12 +1,12 @@
 //============================================================================
-// Name        : hw02.cpp
+// Name        : hw01.cpp
 // Author      : Jack Schmid
 // Version     :
 // Copyright   : 
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include "hw02.h"
+#include "hw01.h"
 
 int main() {
 	// Part a
