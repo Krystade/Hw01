@@ -17,8 +17,7 @@ int main() {
 	cout << "Your random number is: " << digitone << digittwo << digitthree << endl;
 	cout << "1. Sum the digits" << endl << "2. Triple the number" << endl << "3. Reverse the digits" << endl;
 	int choice;
-	//cin >> choice;
-	choice = 1;
+	cin >> choice;
 	switch(choice){
 		case 1:
 			cout << "The digits summed equals " << digitone + digittwo + digitthree << endl;
