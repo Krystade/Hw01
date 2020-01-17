@@ -17,7 +17,8 @@ int main() {
 	cout << "Your random number is: " << digitone << digittwo << digitthree << endl;
 	cout << "1. Sum the digits" << endl << "2. Triple the number" << endl << "3. Reverse the digits" << endl;
 	int choice;
-	cin >> choice;
+	//cin >> choice;
+	choice = 1;
 	switch(choice){
 		case 1:
 			cout << "The digits summed equals " << digitone + digittwo + digitthree << endl;
@@ -52,13 +53,26 @@ int main() {
 		cout << "Random int " << i << " is " << randomInts[i] << endl;
 	}
 	// Part d
-
+	cout << "Sort with insertion sort method" << endl;
+	insertionSort(randomInts, 10);
 	// Part e
-
+	cout << "Write array to file arrayFile.txt\n";
+	ofstream oFile;
+	oFile.open("arrayFile.txt");
+	for(int i = 0; i < 10; i++){
+		oFile << randomInts[i] << ", ";
+	}
+	oFile.close();
 	// Part f
-
+	cout << "Reading from file\n";
+	string line;
+	ifstream iFile("arrayFile.txt");
+	while(getline(iFile, line)){
+		cout << line << '\n';
+	}
 	// Part g
-
+	cout << "Printing array" << endl;
+	printArr(randomInts, 10);
 	return 0;
 }
 
@@ -72,19 +86,18 @@ void printArr(int arr[], int size){
 	}
 }
 
-void selectionSort(int arr[], int size){
-	int index = 0;
-	int temp = 0;
-	for(int i = 0; i < 100; i++){
-		int min = 1000000000;
-		for(int j = i; j< 100; j++){
-			if(arr[j] < min){
-				min = arr[j];
-				index = j;
-			}else{}
+void insertionSort(int arr[], int size){
+	int temp;
+	for(int i = 1; i < size; i++){
+		for(int j = 0; j < i; j++){
+			if(arr[i] < arr[j]){
+				temp = arr[i];
+				for(int k = i; k > j; k--){
+					arr[k] = arr[k - 1];
+				}
+				arr[j] = temp;
+				break;
+			}
 		}
-		temp = arr[i];
-		arr[i] = arr[index];
-		arr[index] = temp;
 	}
 }
