@@ -1,17 +1,19 @@
 /*
- * hw01.h
+ * hw02.h
  *
  *  Created on: Jan 14, 2020
  *      Author: jschmid20
  */
 
-#ifndef HW02_H_
-#define HW02_H_
+#ifndef HW01_H_
+#define HW01_H_
 
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 void printArr(int arr[], int size);
-void selectionSort(int arr[], int size);
+void insertionSort(int arr[], int size);
 
-#endif /* HW02_H_ */
+#endif /* HW01_H_ */
