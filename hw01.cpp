@@ -14,23 +14,31 @@ int main() {
 	int digittwo = rand() % 10;
 	int digitthree = rand() % 10;
 	int num = digitone*100 + digittwo*10 + digitthree;
+	bool done = false;
 	cout << "Your random number is: " << digitone << digittwo << digitthree << endl;
-	cout << "1. Sum the digits" << endl << "2. Triple the number" << endl << "3. Reverse the digits" << endl;
-	int choice;
-	cin >> choice;
-	switch(choice){
-		case 1:
-			cout << "The digits summed equals " << digitone + digittwo + digitthree << endl;
-
-			break;
-		case 2:
-			cout << "The number tripled equals " << num*3 << endl;
-			break;
-		case 3:
-			cout << "The number with reversed digits equals " << digitthree * 100 + digittwo* 10 + digitone << endl;
-			break;
-		default:
-			cout << "Please enter a valid choice" << endl;
+	while(!done){
+		cout << endl << "What would you like to do?" << endl;
+		cout << "1. Sum the digits" << endl << "2. Triple the number" << endl << "3. Reverse the digits" << endl << "4. Exit" << endl;
+		int choice;
+		cin >> choice;
+		switch(choice){
+			case 1:
+				cout << "The digits summed equals " << digitone + digittwo + digitthree << endl;
+				break;
+			case 2:
+				cout << "The number tripled equals " << num*3 << endl;
+				break;
+			case 3:
+				cout << "The number with reversed digits equals " << digitthree * 100 + digittwo* 10 + digitone << endl;
+				break;
+			case 4:
+				cout << "Exiting\n";
+				done = true;
+				break;
+			default:
+				cout << "Please enter a valid choice" << endl;
+				break;
+		}
 	}
 
 	// Part b
@@ -49,7 +57,6 @@ int main() {
 	int randomInts[10];
 	for(int i = 0; i < 10; i++){
 		randomInts[i] = rand()%100;
-		cout << "Random int " << i << " is " << randomInts[i] << endl;
 	}
 	// Part d
 	cout << "Sort with insertion sort method" << endl;
